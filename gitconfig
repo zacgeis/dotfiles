@@ -8,6 +8,7 @@
 [core]
   excludesfile = ~/.gitignore
 [user]
-  name = drew
-  email = drew@drewolson.org
-  signingkey = 9FA98BD6
+  name = zacgeis
+  email = zacgeis@gmail.com
+[push]
+	default = simple
