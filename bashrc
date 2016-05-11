@@ -48,3 +48,10 @@ fi
 [[ -r $rvm_path/scripts/completion ]] && source $rvm_path/scripts/completion
 
 export LANG=en_US.UTF-8
+
+function enter-devbox {
+  gcloud compute instances start devbox
+  gcloud compute ssh devbox
+  gcloud compute instances stop devbox
+  gcloud compute instances list
+}
