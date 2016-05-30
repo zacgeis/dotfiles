@@ -3,9 +3,9 @@ export JAVA_HOME=/Library/Java/Home
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export EDITOR='vim'
-export GREP_OPTIONS='--color=auto'
 export NODE_PATH=/usr/local/lib/node:$NODE_PATH
 
+alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias rc='rake_commit'
 alias ll='ls -la'
