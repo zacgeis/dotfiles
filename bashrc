@@ -6,7 +6,7 @@ export EDITOR='vim'
 export NODE_PATH=/usr/local/lib/node:$NODE_PATH
 
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
+alias ls='ls'
 alias rc='rake_commit'
 alias ll='ls -la'
 alias ss='./script/server'
