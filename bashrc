@@ -55,3 +55,5 @@ function enter-devbox {
   gcloud compute instances stop devbox
   gcloud compute instances list
 }
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
