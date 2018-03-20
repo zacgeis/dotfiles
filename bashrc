@@ -9,8 +9,21 @@ alias grep='grep --color=auto'
 alias ls='ls'
 alias rc='rake_commit'
 alias ll='ls -la'
-alias ss='./script/server'
-alias sc='./script/console'
+
+# fs filename filename_filter
+f() {
+  find . -name "*$1*$2"
+}
+
+# fs text filename_filter
+fs() {
+  find . -name "*$2*" -type f -exec grep -i --color=auto "$1" /dev/null '{}' \+
+}
+
+# fsr text replacement filename_filter
+fsr() {
+  fs $1 $3 | awk -F':' '{print $1}' | xargs -o -L 1 vim -c "%s/$1/$2/gc" -c "wq"
+}
 
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -49,11 +62,6 @@ fi
 
 export LANG=en_US.UTF-8
 
-function enter-devbox {
-  gcloud compute instances start devbox
-  gcloud compute ssh devbox
-  gcloud compute instances stop devbox
-  gcloud compute instances list
-}
-
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+eval "$(rbenv init -)"
