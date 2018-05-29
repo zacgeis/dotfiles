@@ -25,6 +25,11 @@ fsr() {
   fs $1 $3 | awk -F':' '{print $1}' | xargs -o -L 1 vim -c "%s/$1/$2/gc" -c "wq"
 }
 
+fixcamera() {
+  sudo killall VDCAssistant
+  sudo killall AppleCameraAssistant
+}
+
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
