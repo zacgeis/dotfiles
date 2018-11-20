@@ -1,0 +1,23 @@
+{
+    "cmake.configureOnOpen": true,
+    "editor.fontSize": 12,
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [ "<C-w>", "s" ],
+            "commands": [ "workbench.action.splitEditorDown" ]
+        },
+        {
+            "before": [ "<leader>", "n", "t" ],
+            "commands": [ "workbench.action.toggleSidebarVisibility" ],
+        },
+        {
+            "before": [ "<leader>", "r", "f" ],
+            "commands": [ "workbench.action.terminal.new" ]
+        }
+
+    ],
+    "editor.tabSize": 2,
+    "editor.fontFamily": " 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "window.titleBarStyle": "custom",
+    "search.location": "panel",
+}
