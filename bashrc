@@ -49,3 +49,7 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
   [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
   eval "$("$BASE16_SHELL/profile_helper.sh")"
+
+# first arg is number of ms till repeat, second arg is number of repeats within
+# a second.
+xset r rate 190 50
