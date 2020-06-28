@@ -3,6 +3,8 @@ compinit
 autoload -U colors
 colors
 
+bindkey -e
+
 setopt no_auto_menu
 setopt prompt_subst
 setopt no_global_rcs
