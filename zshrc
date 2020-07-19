@@ -65,3 +65,4 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 # first arg is number of ms till repeat, second arg is number of repeats within
 # a second.
 [ -x "$(command -v xset)" ] && xset r rate 190 50
+[ -x "$(command -v setxkbmap)" ] && setxkbmap -option "ctrl:nocaps"
