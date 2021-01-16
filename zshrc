@@ -62,6 +62,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
   [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
   eval "$("$BASE16_SHELL/profile_helper.sh")"
 
+if [ -f /opt/homebrew/bin/brew ]; then
+  eval $(/opt/homebrew/bin/brew shellenv)
+fi
+
 # first arg is number of ms till repeat, second arg is number of repeats within
 # a second.
 # [ -x "$(command -v xset)" ] && xset r rate 190 60
