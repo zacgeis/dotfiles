@@ -69,6 +69,7 @@ def setup():
         print("Submodules are not initialized. Initializing.")
         os.system("git submodule init")
         os.system("git submodule update")
+
     #
     # Create symlinks.
     #
