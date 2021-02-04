@@ -17,7 +17,7 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-signify'
 call plug#end()
 
 set hlsearch
@@ -52,15 +52,17 @@ command! -bang -nargs=? -complete=dir ProjectFiles call fzf#vim#files(<q-args>, 
 
 " vim-lsp config
 let g:lsp_diagnostics_enabled = 1
-let g:lsp_signs_enabled = 1         " enable signs
+let g:lsp_signs_enabled = 1 " enable signs
+let g:lsp_diagnostics_highlights_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1 " enable echo under cursor when in normal mode
+let g:lsp_diagnostics_signs_priority = 20 " Ensure lsp diagnostics have priority over vim-signify gutter signs.
 let g:lsp_highlights_enabled = 1
 let g:lsp_textprop_enabled = 0
 let g:lsp_virtual_text_enabled = 0
 
-let g:lsp_signs_error = {'text': ' X'}
-let g:lsp_signs_warning = {'text': ' ?'}
-let g:lsp_signs_hint = {'text': ' .'}
+let g:lsp_signs_error = {'text': 'E>'}
+let g:lsp_signs_warning = {'text': 'W>'}
+let g:lsp_signs_hint = {'text': 'H>'}
 if executable('clangd')
   augroup lsp_clangd
     autocmd!
@@ -93,6 +95,12 @@ inoremap <silent><expr> <TAB>
 map <silent> gh :LspHover<CR>
 map <silent> gd :LspDefinition<CR>
 map <silent> gr :LspReferences<CR>
+map <silent> gf :LspDocumentRangeFormat<CR>
+map <silent> gF :LspDocumentFormat<CR>
+
+nnoremap <leader>cc :cclose<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [q :cprev<CR>
 
 " Ale config
 " set completeopt-=preview
